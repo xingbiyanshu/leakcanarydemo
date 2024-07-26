@@ -30,6 +30,7 @@ class SecondActivity : AppCompatActivity() {
         /*
         * 可以手动监控任何对象。
         * 从开始监控算起，一段时间后（默认5秒），如果该对象还未被释放则告警。
+        * 所以一般应该在onDestroy里面watch
         * */
 //        AppWatcher.objectWatcher.watch(count, "count was detached")
 //
