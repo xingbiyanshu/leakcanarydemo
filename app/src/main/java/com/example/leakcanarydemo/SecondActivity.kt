@@ -48,7 +48,8 @@ class SecondActivity : AppCompatActivity() {
                 * */
 
                 // 内部需要使用到SecondActivity对象（或其成员）才能导致SecondActivity对象无法及时释放。
-                printHello() // 这一行如果注释掉不会触发leakcanary告警
+                printHello() // 这一行如果注释掉不会触发leakcanary告警。因为没有引用到SecondActivity的任何成员。
+                            // 可以通过"adb shell dumpsys meminfo com.example.leakcanarydemo"查看实际的activity数量，就可以观察到是否泄漏了。
 //                println("SecondActivity#dosomething ${count++}")
 
                 handler.postDelayed(this, 5000)
